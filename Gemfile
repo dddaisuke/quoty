@@ -20,6 +20,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 gem 'friendly_id',  '~> 4.0.1'
 
+gem 'jquery-atwho-rails', '0.1.7'
+
 # language detect
 gem 'cld'
 

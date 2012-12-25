@@ -24,4 +24,10 @@ class UsersController < ApplicationController
       render :edit
     end
   end
+
+  # TODO it should be changed to current_user's friends list.
+  # also every key down event will trigger a query so it's bad for performance.
+  def friends_names
+    render text: User.where("name LIKE ?", "%#{params[:q]}%").pluck(:name)
+  end
 end

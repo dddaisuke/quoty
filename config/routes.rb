@@ -18,6 +18,7 @@ Quoty::Application.routes.draw do
   end
 
   resources :users, only: [:show, :edit, :update] do
+    get 'friends_names', on: :member
     resources :activities, only: [:index]
   end
   resources :bookmarks, only: [:create, :destroy]

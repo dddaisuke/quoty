@@ -35,3 +35,11 @@ $ ->
       $(this).text("Fetching more contents...")
       $.getScript(url)
 
+    # https://github.com/ichord/At.js
+    $('#quote_author').atWho "@", (query, callback) ->
+      $.ajax
+        url: $(event.currentTarget).data('friends-url')
+        data: {'q': query}
+        success: (data) ->
+          names = $.parseJSON(data)
+          callback(names)
